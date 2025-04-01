@@ -19,5 +19,5 @@ jobs:
           docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/my-ci-cd-app:${{ github.sha }} .
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/my-ci-cd-app:${{ github.sha }}
           
-      - name: Save tag for CD
-        run: echo "IMAGE_TAG=${{ github.sha }}" >> $GITHUB_ENV
+      - name: Check the tag
+        run: echo "${{ github.sha }}"
